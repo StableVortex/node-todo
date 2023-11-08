@@ -1,9 +1,14 @@
 // set up ======================================================================
+// what the hell are these variables? 
+// seems like they are related to the db conections, logs, etc
 var express = require('express');
+// ce naiba e expressul asta? e web server-ul?
 var app = express(); 						// create our app w/ express
+// asta e orm-ul pentru baza de date?
 var mongoose = require('mongoose'); 				// mongoose for mongodb
 var port = process.env.PORT || 8080; 				// set the port
 var database = require('./config/database'); 			// load the database config
+// morgan-ul asta ce face? ce cauta aici?
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');

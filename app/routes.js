@@ -1,5 +1,7 @@
+// de ce avem nevoie de modele aici? cu ce ne ajuta?
 var Todo = require('./models/todo');
 
+// de ce avem functia asta aici? ce naiba sunt acronimele astea si la ce sunt bune?
 function getTodos(res) {
     Todo.find(function (err, todos) {
 
@@ -8,14 +10,17 @@ function getTodos(res) {
             res.send(err);
         }
 
+        // ce chestie misto, poti sa returnezi toate entitatiile sub forma de json-uri.
         res.json(todos); // return all todos in JSON format
     });
 };
 
 module.exports = function (app) {
 
+    // metodele astea ar trebui sa fie in controllere. Cine naiba le-a pus aici si cu ce scop?
     // api ---------------------------------------------------------------------
     // get all todos
+    // e foarte straigh foward sintax, imi place
     app.get('/api/todos', function (req, res) {
         // use mongoose to get all todos in the database
         getTodos(res);
